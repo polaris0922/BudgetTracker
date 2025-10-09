@@ -1,0 +1,20 @@
+# Ignore build folders
+bin/
+obj/
+out/
+
+# Ignore user secrets and environment files
+*.env
+appsettings.Development.json
+appsettings.Local.json
+
+# Ignore Visual Studio and VS Code settings
+.vscode/
+*.user
+*.suo
+
+# Ignore logs
+*.log
+
+# Ignore migrations if needed (optional)
+# Migrations/
