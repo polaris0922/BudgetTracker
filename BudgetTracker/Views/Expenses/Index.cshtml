@@ -1,0 +1,29 @@
+@model IEnumerable<BudgetTracker.Models.Expense>
+
+@{
+    ViewData["Title"] = "Expenses";
+}
+
+<h2>💰 Expense List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Note</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Category</td>
+                <td>@item.Note</td>
+                <td>@item.Amount</td>
+                <td>@item.Date.ToString("yyyy/MM/dd")</td>  
+            </tr>
+        }
+    </tbody>
+</table>
