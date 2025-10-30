@@ -8,6 +8,9 @@ out/
 appsettings.Development.json
 appsettings.Local.json
 
+# Ignore ASP.NET Core user secrets (in any folder)
+**/secrets.json
+
 # Ignore Visual Studio and VS Code settings
 .vscode/
 *.user

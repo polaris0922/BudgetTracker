@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // 連線字串（開發階段本機 PostgreSQL）
-var connectionString = "Host=localhost;Database=budget_tracker;Username=postgres;Password=cinna0306";
+var connectionString = builder.Configuration.GetConnectionString("BudgetContext");
 
 builder.Services.AddDbContext<BudgetContext>(options =>
     options.UseNpgsql(connectionString));
@@ -31,7 +31,8 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Expenses}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}")
+    .WithStaticAssets();
 
 
 app.Run();
